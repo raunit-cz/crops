@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop Price Trends</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+
+<header>
+    <h1>Crop Price Trends & Predictions</h1>
+    <p>Current Market Price + Last 4 Years + Future Predictions</p>
+</header>
+
+<section class="charts-grid">
+
+    <!-- Rice -->
+    <div class="chart-box">
+        <h2>Rice</h2>
+        <p class="current-price">Current Price: ₹ <span id="rice-price"></span>/kg</p>
+        <canvas id="riceChart"></canvas>
+    </div>
+
+    <!-- Wheat -->
+    <div class="chart-box">
+        <h2>Wheat</h2>
+        <p class="current-price">Current Price: ₹ <span id="wheat-price"></span>/kg</p>
+        <canvas id="wheatChart"></canvas>
+    </div>
+
+    <!-- Sugarcane -->
+    <div class="chart-box">
+        <h2>Sugarcane</h2>
+        <p class="current-price">Current Price: ₹ <span id="sugarcane-price"></span>/kg</p>
+        <canvas id="sugarcaneChart"></canvas>
+    </div>
+
+    <!-- Potato -->
+    <div class="chart-box">
+        <h2>Potato</h2>
+        <p class="current-price">Current Price: ₹ <span id="potato-price"></span>/kg</p>
+        <canvas id="potatoChart"></canvas>
+    </div>
+
+    <!-- Onion -->
+    <div class="chart-box">
+        <h2>Onion</h2>
+        <p class="current-price">Current Price: ₹ <span id="onion-price"></span>/kg</p>
+        <canvas id="onionChart"></canvas>
+    </div>
+
+    <!-- Tomato -->
+    <div class="chart-box">
+        <h2>Tomato</h2>
+        <p class="current-price">Current Price: ₹ <span id="tomato-price"></span>/kg</p>
+        <canvas id="tomatoChart"></canvas>
+    </div>
+
+</section>
+
+<script src="stats.js"></script>
+</body>
+</html>

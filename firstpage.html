@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Agriculture Service Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="firstpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-left" data-key="topbar">
+            Government of India | Ministry of Agriculture
+        </div>
+
+        <div class="top-bar-right">
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+                <option value="bn">বাংলা</option>
+                <option value="mr">मराठी</option>
+                <option value="ta">தமிழ்</option>
+                <option value="te">తెలుగు</option>
+                <option value="pa">ਪੰਜਾਬੀ</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <h1 data-key="portalTitle">कृषि Grow</h1>
+        <nav>
+            <ul>
+                <li><a href="#" data-key="home">Home</a></li>
+                <li><a href="#" data-key="schemes">Schemes</a></li>
+                <li><a href="#" data-key="advisories">Advisories</a></li>
+                <li><a href="#" data-key="reports">Reports</a></li>
+                <li><a href="#" data-key="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 id="heroHeading">Welcome to Agricultural Advisory Portal</h1>
+        <p id="heroParagraph">Empowering Farmers Through Digital Crop Selling Services</p>
+        <a href="./buy.html" class="hero-btn">🌾 Bulk Crop Marketplace</a>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights-section">
+        <h2 class="highlights-title" data-key="highlightsTitle">
+            Realtime Highlights
+        </h2>
+
+        <div class="highlights-container">
+
+            <a href="crops.html" class="highlight-link">
+                <div class="highlight-box">
+                    <div class="highlight-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 data-key="reliability">Best selling</h3>
+                    <p data-key="reliabilityDesc">Grown with care, trusted by farmers.</p>
+                </div>
+            </a>
+
+            <div class="highlight-box">
+                <div class="highlight-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 data-key="guidance">Expert Guidance</h3>
+                <p data-key="guidanceDesc">Tips from agriculture specialists.</p>
+            </div>
+
+            <a href="stats.html" class="highlight-link">
+                <div class="highlight-box">
+                    <div class="highlight-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 data-key="stats">Real-Time Stats</h3>
+                    <p data-key="statsDesc">Latest market & weather updates.</p>
+                </div>
+            </a>
+
+            <div class="highlight-box">
+                <div class="highlight-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 data-key="reach">Nationwide Reach</h3>
+                <p data-key="reachDesc">Accessible for all Indian farmers.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="service-box">
+            <a href="sms.html" class="service-link">
+                <h2 data-key="sms">SMS Advisory</h2>
+            </a>
+        </div>
+
+        <div class="service-box">
+            <a href="weather.html" class="service-link">
+                <h2 data-key="weather">Weather Updates</h2>
+            </a>
+        </div>
+
+        <div class="service-box">
+            <a href="schemes.html" class="service-link">
+                <h2>Government Schemes</h2>
+            </a>
+        </div>
+
+        <div class="service-box">
+            <a href="soil.html" class="service-link">
+                <h2>Soil Health Card</h2>
+            </a>
+        </div>
+
+        <div class="service-box">
+            <h2 data-key="rice">Rice</h2>
+        </div>
+
+        <div class="service-box">
+            <h2 data-key="wheat">Wheat</h2>
+        </div>
+
+        <div class="service-box">
+            <h2 data-key="potato">Potato</h2>
+        </div>
+
+        <div class="service-box">
+            <h2 data-key="onion">Onion</h2>
+        </div>
+    </section>
+
+    <!-- Notice Section -->
+    <section class="notice-section">
+        <h2 data-key="announcements">Latest Announcements</h2>
+        <div class="notice-box" data-key="notice1">New crop advisory released.</div>
+        <div class="notice-box" data-key="notice2">Subsidy scheme registration open.</div>
+        <div class="notice-box" data-key="notice3">Rainfall alert issued.</div>
+        <div class="notice-box" data-key="notice4">
+            Heatwave conditions likely in central India. Increase irrigation frequency for vegetable crops.
+        </div>
+        <div class="notice-box" data-key="notice5">
+            High demand for export-quality basmati rice reported this week.
+        </div>
+    </section>
+
+    <footer data-key="footer">
+        © 2026 Ministry of Agriculture | All Rights Reserved
+    </footer>
+
+    <script src="firstpage.js"></script>
+</body>
+
+</html>

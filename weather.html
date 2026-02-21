@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f9535, #1b5e20, #2e75b6);
+            color: white;
+            text-align: center;
+        }
+
+        .weather-container {
+            padding: 50px 20px;
+        }
+
+        .weather-card {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
+            padding: 30px;
+            border-radius: 20px;
+            width: 350px;
+            margin: auto;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+
+        .weather-card:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 8px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .temp {
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        .condition {
+            font-size: 20px;
+            margin: 8px 0;
+        }
+
+        .details {
+            margin-top: 15px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .aqi {
+            margin-top: 10px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .forecast {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .forecast div {
+            background: rgba(255,255,255,0.15);
+            padding: 8px;
+            border-radius: 8px;
+            width: 60px;
+            font-size: 12px;
+        }
+
+        .back-btn {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: white;
+            color: #0f9535;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .back-btn:hover {
+            background: #ffcc00;
+            color: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="weather-container">
+    <div class="weather-card">
+        <h2>Live Weather Dashboard</h2>
+
+        <select id="citySelect" onchange="changeWeather()">
+    <option value="0">New Delhi</option>
+    <option value="1">Mumbai</option>
+    <option value="2">Chennai</option>
+    <option value="3">Kolkata</option>
+    <option value="4">Bangalore</option>
+    <option value="5">Hyderabad</option>
+    <option value="6">Pune</option>
+    <option value="7">Lucknow</option>
+    <option value="8">Patna</option>
+    <option value="9">Jaipur</option>
+    <option value="10">Bhopal</option>
+    <option value="11">Chandigarh</option>
+    <option value="12">Ahmedabad</option>
+    <option value="13">Nagpur</option>
+    <option value="14">Varanasi</option>
+    <option value="15">Coimbatore</option>
+    <option value="16">Indore</option>
+    <option value="17">Kanpur</option>
+</select>
+
+        <div class="city">New Delhi</div>
+        <div class="temp">32°C</div>
+        <div class="condition">Sunny</div>
+
+        <div class="details">
+            Feels Like: <span class="feels">34°C</span><br>
+            Humidity: <span class="humidity">60%</span><br>
+            Wind Speed: <span class="wind">12 km/h</span><br>
+            Sunrise: <span class="sunrise">6:10 AM</span><br>
+            Sunset: <span class="sunset">6:45 PM</span>
+        </div>
+
+        <div class="aqi" id="aqiBox">AQI: 120 (Moderate)</div>
+
+        <div class="forecast">
+            <div>Mon<br>33°</div>
+            <div>Tue<br>31°</div>
+            <div>Wed<br>30°</div>
+            <div>Thu<br>29°</div>
+            <div>Fri<br>34°</div>
+        </div>
+    </div>
+
+    <a href="firstpage.html" class="back-btn">← Back to Home</a>
+</div>
+
+<script>
+    const weatherData = [
+{ city:"New Delhi", temp:"32°C", feels:"34°C", condition:"Sunny", humidity:"60%", wind:"12 km/h", sunrise:"6:10 AM", sunset:"6:45 PM", aqi:"120 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Mumbai", temp:"28°C", feels:"30°C", condition:"Cloudy", humidity:"75%", wind:"18 km/h", sunrise:"6:20 AM", sunset:"6:50 PM", aqi:"90 (Good)", aqiColor:"#0f9535" },
+{ city:"Chennai", temp:"34°C", feels:"36°C", condition:"Hot", humidity:"55%", wind:"10 km/h", sunrise:"6:00 AM", sunset:"6:40 PM", aqi:"140 (Unhealthy)", aqiColor:"#f7941e" },
+{ city:"Kolkata", temp:"30°C", feels:"32°C", condition:"Rainy", humidity:"80%", wind:"15 km/h", sunrise:"5:50 AM", sunset:"6:30 PM", aqi:"100 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Bangalore", temp:"27°C", feels:"28°C", condition:"Pleasant", humidity:"65%", wind:"14 km/h", sunrise:"6:05 AM", sunset:"6:35 PM", aqi:"70 (Good)", aqiColor:"#0f9535" },
+{ city:"Hyderabad", temp:"33°C", feels:"35°C", condition:"Sunny", humidity:"50%", wind:"11 km/h", sunrise:"6:08 AM", sunset:"6:42 PM", aqi:"95 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Pune", temp:"29°C", feels:"31°C", condition:"Partly Cloudy", humidity:"62%", wind:"13 km/h", sunrise:"6:15 AM", sunset:"6:48 PM", aqi:"85 (Good)", aqiColor:"#0f9535" },
+{ city:"Lucknow", temp:"31°C", feels:"33°C", condition:"Clear", humidity:"58%", wind:"10 km/h", sunrise:"6:05 AM", sunset:"6:38 PM", aqi:"110 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Patna", temp:"30°C", feels:"32°C", condition:"Humid", humidity:"78%", wind:"9 km/h", sunrise:"5:55 AM", sunset:"6:32 PM", aqi:"130 (Unhealthy)", aqiColor:"#f7941e" },
+{ city:"Jaipur", temp:"35°C", feels:"37°C", condition:"Hot", humidity:"40%", wind:"15 km/h", sunrise:"6:12 AM", sunset:"6:50 PM", aqi:"150 (Unhealthy)", aqiColor:"#f7941e" },
+{ city:"Bhopal", temp:"30°C", feels:"31°C", condition:"Sunny", humidity:"52%", wind:"12 km/h", sunrise:"6:10 AM", sunset:"6:44 PM", aqi:"105 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Chandigarh", temp:"29°C", feels:"30°C", condition:"Cloudy", humidity:"66%", wind:"14 km/h", sunrise:"6:18 AM", sunset:"6:55 PM", aqi:"95 (Good)", aqiColor:"#0f9535" },
+{ city:"Ahmedabad", temp:"34°C", feels:"36°C", condition:"Hot", humidity:"45%", wind:"16 km/h", sunrise:"6:22 AM", sunset:"6:58 PM", aqi:"140 (Unhealthy)", aqiColor:"#f7941e" },
+{ city:"Nagpur", temp:"33°C", feels:"35°C", condition:"Sunny", humidity:"50%", wind:"12 km/h", sunrise:"6:09 AM", sunset:"6:43 PM", aqi:"115 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Varanasi", temp:"31°C", feels:"33°C", condition:"Clear", humidity:"60%", wind:"10 km/h", sunrise:"6:02 AM", sunset:"6:36 PM", aqi:"125 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Coimbatore", temp:"28°C", feels:"29°C", condition:"Pleasant", humidity:"68%", wind:"13 km/h", sunrise:"6:01 AM", sunset:"6:33 PM", aqi:"80 (Good)", aqiColor:"#0f9535" },
+{ city:"Indore", temp:"30°C", feels:"32°C", condition:"Sunny", humidity:"55%", wind:"11 km/h", sunrise:"6:11 AM", sunset:"6:45 PM", aqi:"100 (Moderate)", aqiColor:"#ffcc00" },
+{ city:"Kanpur", temp:"32°C", feels:"34°C", condition:"Hot", humidity:"57%", wind:"12 km/h", sunrise:"6:06 AM", sunset:"6:40 PM", aqi:"120 (Moderate)", aqiColor:"#ffcc00" }
+];
+
+    function changeWeather() {
+        const index = document.getElementById("citySelect").value;
+        const data = weatherData[index];
+
+        document.querySelector(".city").textContent = data.city;
+        document.querySelector(".temp").textContent = data.temp;
+        document.querySelector(".condition").textContent = data.condition;
+        document.querySelector(".feels").textContent = data.feels;
+        document.querySelector(".humidity").textContent = data.humidity;
+        document.querySelector(".wind").textContent = data.wind;
+        document.querySelector(".sunrise").textContent = data.sunrise;
+        document.querySelector(".sunset").textContent = data.sunset;
+
+        const aqiBox = document.getElementById("aqiBox");
+        aqiBox.textContent = "AQI: " + data.aqi;
+        aqiBox.style.background = data.aqiColor;
+    }
+
+    changeWeather();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulk Crop Marketplace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="buy.css">
+</head>
+<body>
+
+<header class="buy-header">
+    <h1>🌾 Bulk Crop Marketplace</h1>
+    <p>Connecting Local Farmers with Large Buyers</p>
+</header>
+
+<div class="filter-section">
+    <select id="cropFilter" onchange="filterCrops()">
+        <option value="all">All Crops</option>
+        <option value="Rice">Rice</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Potato">Potato</option>
+        <option value="Onion">Onion</option>
+        <option value="Tomato">Tomato</option>
+        <option value="Sugarcane">Sugarcane</option>
+        <option value="Maize">Maize</option>
+        <option value="Mustard">Mustard</option>
+    </select>
+</div>
+
+<div class="market-container" id="marketContainer"></div>
+
+<a href="firstpage.html" class="back-btn">← Back to Home</a>
+
+<script src="buy.js"></script>
+</body>
+</html>

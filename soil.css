@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f1f8e9, #e8f5e9);
+    color: #333;
+}
+
+header {
+    background: linear-gradient(to right, #2e7d32, #1b5e20);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.hero img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.info-section {
+    padding: 40px;
+    text-align: center;
+}
+
+.info-section h2 {
+    color: #1b5e20;
+}
+
+.card-section {
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+.card-section h2 {
+    text-align: center;
+    color: #2e7d32;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.soil-card {
+    background: #f9fff9;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.soil-card:hover {
+    transform: translateY(-5px);
+}
+
+.soil-card h3 {
+    color: #1b5e20;
+}
+
+.benefits {
+    padding: 40px;
+    text-align: center;
+}
+
+.benefit-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.benefit-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.benefit-box:hover {
+    transform: scale(1.05);
+}
+
+.benefit-box img {
+    width: 60px;
+    margin-bottom: 10px;
+}
+
+.back-button {
+    text-align: center;
+    margin: 30px;
+}
+
+.back-button a {
+    padding: 10px 20px;
+    background: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+footer {
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
