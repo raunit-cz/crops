@@ -13,22 +13,22 @@ let index = 0;
 const slides = {
     en: [
         {
-            image: "images/img1.png",
+            image: "img1.png",
             title: "Smart Farming Solutions",
             text: "Modern technology for better crop yield."
         },
         {
-            image: "images/img2.png",
+            image: "img2.png",
             title: "Best Selling Crops",
             text: "High demand organic and quality crops."
         },
         {
-            image: "images/img3.png",
+            image: "img3.png",
             title: "Weather & Market Updates",
             text: "Realtime crop price and climate insights."
         },
         {
-            image: "images/img4.png",
+            image: "img4.png",
             title: "Empowering Indian Farmers",
             text: "Digital advisory services across India."
         }
